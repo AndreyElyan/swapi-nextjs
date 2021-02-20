@@ -15,5 +15,6 @@ export enum EVENTS {
 }
 
 export enum SERVICES {
-  GET_MOVIES = 'GET_MOVIES'
+  GET_MOVIES = 'GET_MOVIES',
+  GET_MOVIE_DETAIL = 'GET_MOVIE_DETAIL'
 }

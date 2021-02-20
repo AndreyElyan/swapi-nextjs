@@ -2,6 +2,7 @@ import { SwapiContext } from './context';
 
 export const initialContext: SwapiContext = {
   movies: [],
+  titleImages: [],
   movie: {},
   currentMovieTab: '',
   previousPageUrl: '',
