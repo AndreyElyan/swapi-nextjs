@@ -28,7 +28,6 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      icons: "agibank-icons",
     },
     fontSize: {
       "3xs": "0.75rem", // 12px
@@ -63,26 +62,12 @@ module.exports = {
       xl: "1440px",
     },
     colors: {
-      transparent: "transparent",
-      black: "#000",
-      white: "#fff",
-      gray: {
-        100: "#f2f2f2",
-        200: "#d3d3d3",
-        300: "#c7cad9",
-        400: "#7a91ad",
-      },
-      red: "#ff001f",
-      orange: "#f5a623",
-      green: "#2fc750",
-      blue: {
-        100: "#266bff",
-        200: "#1e55cb",
-        300: "#262857",
-      },
+      gray: colors.coolGray,
+      blue: colors.lightBlue,
+      red: colors.rose,
+      pink: colors.fuchsia,
     },
     willChange: {
-      // defaults to these values
       auto: "auto",
       scroll: "scroll-position",
       contents: "contents",
