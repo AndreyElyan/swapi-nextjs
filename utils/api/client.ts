@@ -1,12 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
 const client = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_GATEWAY}/user-onboarding-backend/v1`,
-  headers: {
-    accept: "application/json",
-    "Content-Type": "application/json",
-    "x-origin": "IBK",
-  },
+  baseURL: `${process.env.NEXT_PUBLIC_GATEWAY}`,
+  headers: {},
 });
 
 export default client;
