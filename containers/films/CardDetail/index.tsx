@@ -1,4 +1,5 @@
 import { useMachine } from '@xstate/react';
+import Loader from 'components/Loader';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { swapiMachine } from 'utils/machines/contact';
@@ -24,6 +25,11 @@ const CardDetail: React.FC = () => {
 
   return (
     <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-8 w-full">
+      {!movies ? (
+        <div className="flex justify-center items-center w-full h-full">
+          <Loader size="100px" />
+        </div>
+      ) : null}
       {movies?.map((result, index) => (
         <div
           onClick={() => setFilmDetail(index)}

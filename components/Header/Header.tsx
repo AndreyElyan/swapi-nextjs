@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export interface HeaderProps {
   className?: string;
@@ -10,15 +10,13 @@ export const Header: React.FC<HeaderProps> = ({
   ...props
 }) => {
   const headerClassnames = classNames(
-    "flex items-center bg-yellow-500 justify-center relative h-28 w-full",
+    'flex items-center bg-yellow-500 justify-center relative h-28 w-full shadow-md',
     className
   );
 
   return (
     <header className={headerClassnames} {...props}>
-      <div className="flex flex-row justify-around w-full">
-        {children}
-      </div>
+      <div className="flex flex-row justify-around w-full">{children}</div>
     </header>
   );
 };

@@ -4,13 +4,13 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   important: true,
   corePlugins: {
-    float: false,
+    float: false
   },
   theme: {
     extend: {
       spacing: {
-        14: '3.5rem',
-      },
+        14: '3.5rem'
+      }
     },
     fontFamily: {
       averta: [
@@ -26,8 +26,8 @@ module.exports = {
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
+        '"Noto Color Emoji"'
+      ]
     },
     fontSize: {
       '3xs': '0.75rem', // 12px
@@ -45,7 +45,7 @@ module.exports = {
       '7xl': '4rem', // 64px
       '8xl': '4.5rem', // 72px
       '9xl': '6rem', // 96px
-      '10xl': '14.375rem', // 230px
+      '10xl': '14.375rem' // 230px
     },
     lineHeight: {
       none: '1',
@@ -53,13 +53,13 @@ module.exports = {
       snug: '1.33',
       normal: '1.5',
       relaxed: '1.625',
-      loose: '2',
+      loose: '2'
     },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1440px',
+      xl: '1440px'
     },
     colors: {
       gray: colors.coolGray,
@@ -68,15 +68,16 @@ module.exports = {
       pink: colors.fuchsia,
       orange: colors.orange,
       yellow: colors.yellow,
+      white: colors.white
     },
     willChange: {
       auto: 'auto',
       scroll: 'scroll-position',
       contents: 'contents',
       opacity: 'opacity',
-      transform: 'transform',
-    },
+      transform: 'transform'
+    }
   },
   variants: {},
-  plugins: [],
+  plugins: []
 };
