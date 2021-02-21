@@ -8,4 +8,5 @@ export interface SwapiContext {
   loading: boolean;
   error: boolean;
   count: number;
+  index: number;
 }

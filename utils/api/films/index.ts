@@ -4,3 +4,7 @@ import client from '../client';
 export function getFilms() {
   return client.get(`/films/`, {});
 }
+
+export function getFilmById(id) {
+  return client.get(`/films/${id}`, {});
+}

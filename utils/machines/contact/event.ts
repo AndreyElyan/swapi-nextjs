@@ -12,14 +12,6 @@ export type SwapiEvent =
     }
   | {
       type: EVENTS.GET_FILMS_DETAIL;
-      // category?: string;
-      // taxId?: string;
-      // description?: string;
-      // email?: string;
-      // name?: string;
-      // product?: string;
-      // protocol?: string;
-      // phone?: string;
-      // currentStep?: number;
+      index?: number;
     }
   | { type: EVENTS.RESTART };

@@ -1,4 +1,5 @@
 import { useMachine } from '@xstate/react';
+import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { swapiMachine } from 'utils/machines/contact';
 import { EVENTS } from 'utils/machines/contact/enums';
@@ -6,32 +7,25 @@ import { MAP_IMAGES, MAP_URL } from './enum';
 
 const CardDetail: React.FC = () => {
   const [state, dispatch] = useMachine(swapiMachine);
+  const router = useRouter();
 
-  const {
-    movie,
-    movies,
-    error,
-    loading,
-    count,
-    currentMovieTab,
-    nextPageUrl,
-    previousPageUrl
-  } = state.context;
+  const { movies, index } = state.context;
 
-  const getFilmDetail = useCallback(
+  const setFilmDetail = useCallback(
     values => {
       dispatch({
         type: EVENTS.GET_FILMS_DETAIL,
-        ...values
+        index: values
       });
     },
     [dispatch]
   );
+
   return (
     <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-8 w-full">
       {movies?.map((result, index) => (
         <div
-          onClick={() => getFilmDetail(MAP_URL[result.url])}
+          onClick={() => setFilmDetail(index)}
           className="
            flex flex-col items-center text-center shadow-xl
            cursor-pointer rounded-lg rounded-br-3xl"

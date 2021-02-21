@@ -9,5 +9,6 @@ export const initialContext: SwapiContext = {
   nextPageUrl: '',
   loading: false,
   error: false,
-  count: 0
+  count: 0,
+  index: 0
 };
