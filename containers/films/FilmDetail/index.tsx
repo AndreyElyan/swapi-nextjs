@@ -1,3 +1,5 @@
+import { useCallback, useState } from 'react';
+
 import { useMachine } from '@xstate/react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -10,7 +12,7 @@ import Loader from 'components/Loader';
 
 const FilmDetail: React.FC = () => {
   const [state, dispatch] = useMachine(swapiMachine);
-  const { movies: moviesData, index } = state.context;
+  const { movies: moviesData } = state.context;
 
   const router = useRouter();
 

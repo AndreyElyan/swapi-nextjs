@@ -8,3 +8,7 @@ export function getFilms() {
 export function getFilmById(id) {
   return client.get(`/films/${id}`, {});
 }
+
+export function searchFilm(value) {
+  return client.get(`/films/?search=${value}`, {});
+}

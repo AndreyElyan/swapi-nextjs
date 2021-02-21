@@ -48,7 +48,9 @@ export const Header: React.FC<HeaderProps> = ({
         <Link href="/films">
           <p
             className={`${itemsHeaderClassNames} ${
-              moviesTabActive ? 'font-bold text-gray-800' : 'text-white'
+              moviesTabActive
+                ? 'font-bold text-gray-800 border-b-4'
+                : 'text-white'
             }`}
           >
             Movies
@@ -57,7 +59,9 @@ export const Header: React.FC<HeaderProps> = ({
         <Link href="/characters">
           <p
             className={`${itemsHeaderClassNames} ${
-              charactersTabActive ? 'font-bold text-gray-800' : 'text-white'
+              charactersTabActive
+                ? 'font-bold text-gray-800 border-b-4'
+                : 'text-white'
             }`}
           >
             Characters
@@ -66,7 +70,9 @@ export const Header: React.FC<HeaderProps> = ({
         <Link href="/spaceships">
           <p
             className={`${itemsHeaderClassNames} ${
-              spaceshipsTabActive ? 'font-bold text-gray-800' : 'text-white'
+              spaceshipsTabActive
+                ? 'font-bold text-gray-800 border-b-4'
+                : 'text-white'
             }`}
           >
             Spaceships

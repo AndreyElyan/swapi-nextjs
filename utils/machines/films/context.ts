@@ -1,7 +1,7 @@
 export interface SwapiContext {
   movies: any;
   titleImages: any;
-  movie: Object;
+  movie: any;
   currentMovieTab: string;
   previousPageUrl: string;
   nextPageUrl: string;

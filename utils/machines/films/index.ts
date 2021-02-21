@@ -8,7 +8,7 @@ import { SwapiSchema } from './schema';
 import { initialContext } from './initialContext';
 
 import { SwapiEvent } from './event';
-import { getFilmById, getFilms } from 'utils/api/films';
+import { getFilmById, getFilms, searchFilm } from 'utils/api/films';
 
 export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
   {
@@ -46,6 +46,14 @@ export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
             actions: assign({
               loading: _context => true,
               index: (_context_, { index }) => index
+            })
+          },
+
+          [EVENTS.SEARCH_MOVIE]: {
+            target: STATES.ON_FILMS,
+            actions: assign({
+              loading: _context => true,
+              movies: (_context_, { movies }) => movies
             })
           }
         }
