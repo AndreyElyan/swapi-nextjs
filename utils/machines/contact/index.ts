@@ -47,7 +47,7 @@ export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
             target: STATES.FILM_DETAIL,
             actions: assign({
               loading: _context => true,
-              id: (_context_, { index }) => index
+              index: (_context_, { index }) => index
             })
           }
         }
@@ -58,7 +58,7 @@ export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
           [EVENTS.GET_FILMS_DETAIL]: {
             actions: assign({
               loading: _context => true,
-              id: (_context_, { id }) => id
+              index: (_context_, { index }) => index
             })
           }
         }

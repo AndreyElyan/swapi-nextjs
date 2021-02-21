@@ -17,6 +17,7 @@ const CardDetail: React.FC = () => {
         type: EVENTS.GET_FILMS_DETAIL,
         index: values
       });
+      router.push(`films/${values + 1}`);
     },
     [dispatch]
   );
