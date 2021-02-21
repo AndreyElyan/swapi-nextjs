@@ -1,5 +1,3 @@
-import { useCallback, useState } from 'react';
-
 import { useMachine } from '@xstate/react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';

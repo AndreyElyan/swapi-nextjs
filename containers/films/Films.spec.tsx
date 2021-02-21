@@ -1,29 +1,27 @@
 import userEvent from '@testing-library/user-event';
+import { films } from 'test/mocks/films';
 
-import { render, screen, waitFor } from 'test/testUtils';
+import { axiosMock, render, screen, waitFor } from 'test/testUtils';
 
 import Films from '.';
 
 describe('Render Films', () => {
+  beforeEach(() => {
+    const endpointFilms = '/film/';
+    axiosMock.onGet(endpointFilms).reply(404, films);
+  });
   test('Check initials elements', async () => {
     render(<Films />);
 
-    const text1 = await screen.findAllByText('A New Hope');
-    // const title = await screen.findByText(
-    //   'Formulário de Atendimento Ouvidoria'
-    // );
-    // const text2 = await screen.findByText(
-    //   'Preencha os dados para seguir com a formalização da sua denúncia.'
-    // );
-    // const title2 = await screen.findByText('Atenção!');
-    // const buttonSubmit = await screen.findByRole('button', {
-    //   name: /Continuar/i
-    // });
+    const title1 = await screen.findAllByText('Ops, ocorreu um erro.');
+    const buttonSubmit = await screen.findByRole('button', {
+      name: /Ok, entendi/i
+    });
 
-    expect(text1[0]).toBeVisible();
-    // expect(title).toBeVisible();
-    // expect(text2).toBeVisible();
-    // expect(title2).toBeVisible();
-    // expect(buttonSubmit).toBeEnabled();
+    await waitFor(() => expect(buttonSubmit).toBeEnabled());
+
+    userEvent.click(buttonSubmit);
+
+    expect(title1[0]).toBeVisible();
   });
 });

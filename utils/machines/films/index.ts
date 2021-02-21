@@ -32,9 +32,7 @@ export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
           onError: {
             target: STATES.ERROR,
             actions: assign({
-              error: (_context, { data }) => {
-                return data?.response?.data?.message ?? 'Ops,ocorreu um erro';
-              },
+              error: _context => true,
               loading: _context => false
             })
           }
@@ -87,8 +85,8 @@ export const swapiMachine = Machine<SwapiContext, SwapiSchema, SwapiEvent>(
 
         return data;
       },
-      [SERVICES.GET_MOVIE_DETAIL]: async ({ id }, _event) => {
-        const { data } = await getFilmById(id);
+      [SERVICES.GET_MOVIE_DETAIL]: async ({ index }, _event) => {
+        const { data } = await getFilmById(index);
 
         return data;
       }

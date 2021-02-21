@@ -1,3 +1,3 @@
-import FilmDetails from './FilmDetail';
+import FilmDetails from 'containers/films/FilmDetail';
 
 export default FilmDetails;

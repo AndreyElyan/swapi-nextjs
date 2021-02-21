@@ -1,16 +1,17 @@
 import { useMachine } from '@xstate/react';
+
 import Loader from 'components/Loader';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { swapiMachine } from 'utils/machines/films';
 import { EVENTS } from 'utils/machines/films/enums';
-import { MAP_IMAGES, MAP_URL } from './enum';
+import { MAP_IMAGES } from './enum';
 
 const CardDetail: React.FC = () => {
   const [state, dispatch] = useMachine(swapiMachine);
   const router = useRouter();
 
-  const { movies, index } = state.context;
+  const { movies } = state.context;
 
   const setFilmDetail = useCallback(
     values => {
@@ -46,7 +47,9 @@ const CardDetail: React.FC = () => {
           <h1 className="text-gray-600 font-bold mb-4 sm:text-sm text-xs">
             {result.title}
           </h1>
-          <h2 className="mb-4 hover:text-yellow-500 underline">See More</h2>
+          <button className="mb-4 hover:text-yellow-500 underline">
+            See More
+          </button>
         </div>
       ))}
     </div>
