@@ -10,7 +10,7 @@ import Loader from 'components/Loader';
 
 const FilmDetail: React.FC = () => {
   const [state, dispatch] = useMachine(swapiMachine);
-  const { movies: moviesData } = state.context;
+  const { movies: moviesData, index } = state.context;
 
   const router = useRouter();
 
