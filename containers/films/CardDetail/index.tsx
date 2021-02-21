@@ -2,8 +2,8 @@ import { useMachine } from '@xstate/react';
 import Loader from 'components/Loader';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-import { swapiMachine } from 'utils/machines/contact';
-import { EVENTS } from 'utils/machines/contact/enums';
+import { swapiMachine } from 'utils/machines/films';
+import { EVENTS } from 'utils/machines/films/enums';
 import { MAP_IMAGES, MAP_URL } from './enum';
 
 const CardDetail: React.FC = () => {

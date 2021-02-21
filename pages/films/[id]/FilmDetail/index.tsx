@@ -7,7 +7,7 @@ import { MAP_IMAGES } from 'containers/films/CardDetail/enum';
 
 import { intToRoman } from 'utils/helpers/intToRoman';
 import { transformDate } from 'utils/helpers/transformDate';
-import { swapiMachine } from 'utils/machines/contact';
+import { swapiMachine } from 'utils/machines/films';
 import Loader from 'components/Loader';
 
 const FilmDetail: React.FC = () => {

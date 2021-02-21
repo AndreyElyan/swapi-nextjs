@@ -2,8 +2,8 @@ import { useMachine } from '@xstate/react';
 
 import { Container } from 'components/Container';
 import Loader from 'components/Loader';
-import { swapiMachine } from 'utils/machines/contact';
-import { STATES } from 'utils/machines/contact/enums';
+import { swapiMachine } from 'utils/machines/films';
+import { STATES } from 'utils/machines/films/enums';
 import CardDetail from './CardDetail';
 
 export default function Films() {
