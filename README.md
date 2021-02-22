@@ -40,4 +40,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 https://swapi-nextjs.vercel.app/films
 
-Criada aplicação para teste da empresa Ilegra, com a finalidade de ler os dados da api [https://swapi.dev/]
+Criada aplicação para teste da empresa Ilegra, com a finalidade de ler os dados da api [https://swapi.dev/](https://swapi.dev/)
