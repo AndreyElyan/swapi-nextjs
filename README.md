@@ -60,7 +60,7 @@ Utilizado Vercel para deploy da aplicação
 * Mobile
 
 
-![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG) ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/filmedetail1.PNG)
 
 ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/search.PNG)
  
