@@ -5,7 +5,7 @@ import React from 'react';
 export interface InputProps {
   label: string;
   onChange: any;
-  value: any;
+  value?: any;
 }
 
 const Input: React.FC<InputProps> = ({ label, onChange, value }) => {

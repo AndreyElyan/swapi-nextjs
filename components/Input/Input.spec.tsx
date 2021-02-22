@@ -5,12 +5,10 @@ import Input from './Input';
 
 describe('Render Input', () => {
   test('Check initials elements', async () => {
-    render(
-      <Input label="search" onChange={alert('oi')} value="Harry Potter"></Input>
-    );
+    render(<Input label="search" onChange={console.log('oi')}></Input>);
 
     const container = (
-      <Input label="search" onChange={alert('oi')} value="Harry Potter"></Input>
+      <Input label="search" onChange={console.log('oi')}></Input>
     );
 
     const placeholder = screen.findAllByPlaceholderText('search');

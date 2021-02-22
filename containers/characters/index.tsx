@@ -22,6 +22,7 @@ export default function Characters() {
 
   return (
     <div className="flex flex-col px-8">
+      <h1 className="mt-7 font-bold text-xl">Characters</h1>
       <div className="flex w-full justify-center">
         <Feedback />
       </div>

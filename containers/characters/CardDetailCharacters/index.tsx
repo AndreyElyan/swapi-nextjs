@@ -59,7 +59,7 @@ const CardDetailCharacters: React.FC = () => {
         ) : null}
         {characters?.map((result, index) => (
           <div
-            className="grid grid-cols-2 mt-28 shadow-xl rounded-lg rounded-br-3xl"
+            className="grid grid-cols-2 mt-28 shadow-xl bg-gray-200 rounded-lg rounded-br-3xl"
             key={index}
           >
             <div className="flex flex-col items-center">
