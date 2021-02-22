@@ -42,6 +42,11 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={headerClassnames} {...props}>
       <div className="flex flex-row justify-around w-full">
+        <img
+          className=" max-h-10 sm:max-h-12"
+          src="https://logosmarcas.net/wp-content/uploads/2020/11/Star-Wars-Logo.png"
+          alt="logo"
+        ></img>
         <Link href="/films">
           <p
             className={`${itemsHeaderClassNames} ${
