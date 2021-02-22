@@ -2,12 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+# Important!!
+ npm i or npm install
+
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -39,3 +41,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## URL da aplicação
 
 https://swapi-nextjs.vercel.app/films
+
+Criada aplicação em Next, utilizando tailwind e ts para teste da empresa Ilegra, com a finalidade de ler e consumir os dados da api [https://swapi.dev/](https://swapi.dev/).
+
+Tendo os seguintes requisitos:
+
+• Testes unitários.
+• Versionamento em repositório público (Github, Gitlab).
+• Instruções para rodar o projeto (README).
+• Componentes reutilizáveis.
+• Aplicação responsiva.
+
+Utilizado Vercel para deploy da aplicação
+
+
+## Telas da Aplicação
+
+* Mobile
+
+
+
+

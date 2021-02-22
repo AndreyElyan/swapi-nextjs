@@ -1,7 +1,5 @@
 import { useMachine } from '@xstate/react';
-import Button from 'components/Button';
 
-import { Container } from 'components/Container';
 import Error from 'components/Error';
 import Loader from 'components/Loader';
 import { useCallback } from 'react';
