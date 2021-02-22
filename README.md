@@ -58,8 +58,9 @@ Utilizado Vercel para deploy da aplicação
 ## Telas da Aplicação
 
 * Mobile
+* ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG)
 
-https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG
+
 
 
 
