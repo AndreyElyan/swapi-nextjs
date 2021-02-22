@@ -1,49 +1,49 @@
 import { useMachine } from '@xstate/react';
 import Button from 'components/Button';
-import Input from 'components/Input/Input';
 
 import Loader from 'components/Loader';
-import { useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
-import { getFilms, searchFilm } from 'utils/api/films';
-import { swapiMachine } from 'utils/machines/films';
-import { EVENTS } from 'utils/machines/films/enums';
-import { MAP_IMAGES } from './enum';
+import { getCharactersByPage } from 'utils/api/characters';
 
-const CardDetail: React.FC = () => {
-  const [state, dispatch] = useMachine(swapiMachine);
-  const [searchValue, setSearchValue] = useState('');
-  const router = useRouter();
+import { charactersMachine } from 'utils/machines/characters';
+import { EVENTS } from 'utils/machines/characters/enums';
 
-  const { movies } = state.context;
+const CardDetailCharacters: React.FC = () => {
+  const [state, dispatch] = useMachine(charactersMachine);
 
-  const setFilmDetail = useCallback(
-    values => {
-      dispatch({
-        type: EVENTS.GET_FILMS_DETAIL,
-        index: values
-      });
-      router.push(`films/${values + 1}`);
-    },
-    [dispatch]
-  );
+  const { characters, nextPageUrl, previousPageUrl } = state.context;
 
-  const searchMovie = async () => {
+  const nexStep = async () => {
     try {
-      if (searchValue) {
-        const { data } = await searchFilm(searchValue);
-        dispatch({
-          type: EVENTS.SEARCH_MOVIE,
-          movies: data.results
-        });
-        setSearchValue('');
-      } else {
-        const { data } = await getFilms();
-        dispatch({
-          type: EVENTS.SEARCH_MOVIE,
-          movies: data.results
-        });
-      }
+      const nextPageId = nextPageUrl?.replace(
+        'http://swapi.dev/api/people/?page=',
+        ''
+      );
+      const { data } = await getCharactersByPage(nextPageId);
+      dispatch({
+        type: EVENTS.NEXT_STEP,
+        characters: data.results,
+        nextPageUrl: data.next,
+        previousPageUrl: data.previous
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const previousStep = async () => {
+    try {
+      const previousPageId = previousPageUrl?.replace(
+        'http://swapi.dev/api/people/?page=',
+        ''
+      );
+      console.log(previousPageId);
+      const { data } = await getCharactersByPage(previousPageId);
+      dispatch({
+        type: EVENTS.PREVIOUS_STEP,
+        characters: data.results,
+        previousPageUrl: data.previous,
+        nextPageUrl: data.next
+      });
     } catch (err) {
       console.log(err);
     }
@@ -51,48 +51,67 @@ const CardDetail: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col my-12">
-        <Input
-          label="Search a Movie"
-          onChange={e => setSearchValue(e.target.value)}
-          value={searchValue}
-        />
-
-        <Button className="mt-4" onClick={searchMovie}>
-          Buscar
-        </Button>
-      </div>
-
-      <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-8 w-full">
-        {!movies ? (
+      <div className="grid  grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 mt-12 w-full ">
+        {!characters ? (
           <div className="flex justify-center items-center w-full h-full">
             <Loader size="100px" />
           </div>
         ) : null}
-        {movies?.map((result, index) => (
+        {characters?.map((result, index) => (
           <div
-            onClick={() => setFilmDetail(index)}
-            className="
-           flex flex-col items-center text-center shadow-xl
-           cursor-pointer rounded-lg rounded-br-3xl"
+            className="grid grid-cols-2 mt-28 shadow-xl rounded-lg rounded-br-3xl"
             key={index}
           >
-            <img
-              className="max-h-80 rounded mt-8 mb-8 "
-              src={MAP_IMAGES[result.title]}
-              alt={`${result.title} poster`}
-            />
-            <h1 className="text-gray-600 font-bold mb-4 sm:text-sm text-xs">
-              {result.title}
-            </h1>
-            <button className="mb-4 hover:text-yellow-500 underline">
-              See More
-            </button>
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600  font-bold">Name:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.name}
+              </h2>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600 font-bold">Height:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.height}
+              </h2>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600 font-bold">Mass:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.mass}
+              </h2>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600 font-bold">Skin:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.skin_color}
+              </h2>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600 font-bold">Eyes:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.eye_color}
+              </h2>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-xl text-gray-600 font-bold">Gender:</h1>
+              <h2 className="mt-4 font-semibold mb-4 sm:text-sm text-xs">
+                {result.gender}
+              </h2>
+            </div>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col sm:flex-row justify-between w-full  my-12">
+        <Button onClick={previousStep}>previous</Button>
+        <Button onClick={nexStep}>next</Button>
       </div>
     </>
   );
 };
 
-export default CardDetail;
+export default CardDetailCharacters;

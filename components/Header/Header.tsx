@@ -67,17 +67,6 @@ export const Header: React.FC<HeaderProps> = ({
             Characters
           </p>
         </Link>
-        <Link href="/spaceships">
-          <p
-            className={`${itemsHeaderClassNames} ${
-              spaceshipsTabActive
-                ? 'font-bold text-gray-800 border-b-4'
-                : 'text-white'
-            }`}
-          >
-            Spaceships
-          </p>
-        </Link>
       </div>
     </header>
   );

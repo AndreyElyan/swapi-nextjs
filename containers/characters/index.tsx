@@ -5,12 +5,12 @@ import { Container } from 'components/Container';
 import Error from 'components/Error';
 import Loader from 'components/Loader';
 import { useCallback } from 'react';
-import { swapiMachine } from 'utils/machines/films';
-import { EVENTS, STATES } from 'utils/machines/films/enums';
+import { charactersMachine } from 'utils/machines/characters';
+import { EVENTS, STATES } from 'utils/machines/characters/enums';
 import CardDetail from './CardDetail';
 
 export default function Characters() {
-  const [state, dispatch] = useMachine(swapiMachine);
+  const [state, dispatch] = useMachine(charactersMachine);
 
   const { error } = state.context;
 
@@ -26,12 +26,12 @@ export default function Characters() {
         <Feedback />
       </div>
       <div>
-        {state.matches(STATES.GET_FILMS) ? (
+        {state.matches(STATES.GET_CHARACTERS) ? (
           <div className="flex justify-center items-center w-full h-full">
             <Loader size="100px" />
           </div>
         ) : null}
-        {state.matches(STATES.ON_FILMS) ? <CardDetail /> : null}
+        {state.matches(STATES.ON_CHARACTERS) ? <CardDetail /> : null}
       </div>
     </div>
   );

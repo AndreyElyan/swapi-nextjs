@@ -1,17 +1,17 @@
 import userEvent from '@testing-library/user-event';
-import { films } from 'test/mocks/films';
+import { characters } from 'test/mocks/characters';
 
 import { axiosMock, render, screen, waitFor } from 'test/testUtils';
 
-import Films from '.';
+import Characters from '.';
 
-describe('Render Films', () => {
+describe('Render Characters', () => {
   beforeEach(() => {
-    const endpointFilms = '/film/';
-    axiosMock.onGet(endpointFilms).reply(404, films);
+    const endpointCharacters = '/film/';
+    axiosMock.onGet(endpointCharacters).reply(404, characters);
   });
   test('Check initials elements', async () => {
-    render(<Films />);
+    render(<Characters />);
 
     const title1 = await screen.findAllByText('Ops, ocorreu um erro.');
     const buttonSubmit = await screen.findByRole('button', {
