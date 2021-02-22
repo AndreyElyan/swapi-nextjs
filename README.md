@@ -60,15 +60,15 @@ Utilizado Vercel para deploy da aplicação
 * Mobile
 
 
-* ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/home.PNG)
 
- ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/search.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/search.PNG)
  
- ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/notfound.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/notfound.PNG)
  
- ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/filmdetail2.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/filmdetail2.PNG)
  
- ![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/filmdetail1.PNG)
+![image](https://github.com/AndreyElyan/swapi-nextjs/blob/master/public/screenshots/mobile/filmedetail1.PNG)
  
 
 
