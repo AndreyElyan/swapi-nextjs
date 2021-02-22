@@ -15,3 +15,7 @@ module.exports = {
     ENV_TYPE: process.env.ENV_TYPE
   }
 };
+
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS({});
