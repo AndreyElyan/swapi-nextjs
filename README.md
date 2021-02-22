@@ -40,4 +40,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 https://swapi-nextjs.vercel.app/films
 
-Criada aplicação para teste da empresa Ilegra, com a finalidade de ler os dados da api [https://swapi.dev/](https://swapi.dev/)
+Criada aplicação em Next, utilizando tailwind e ts para teste da empresa Ilegra, com a finalidade de ler e consumir os dados da api [https://swapi.dev/](https://swapi.dev/).
+
+Tendo os seguintes requisitos:
+
+• Testes unitários.
+• Versionamento em repositório público (Github, Gitlab).
+• Instruções para rodar o projeto (README).
+• Componentes reutilizáveis.
+• Aplicação responsiva.
+
+Utilizado Vercel para deploy da aplicação
+
+
+## Telas da Aplicação
+
+
