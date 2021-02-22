@@ -14,7 +14,56 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+**This is your source code tree:**
+
+```
+src
+
+
+|-- components
+|-- containers
+|-- pages
+|-- styles
+|-- utils
+|-- test
+
+...
+```
+Every item created inside components, containers, pages... will be a folder with their code, the tests file, and to keep your code simple and short you can add extra files for helpers or styles it this folder. The folder structure will look like this:
+
+```
+components
+|-- YouComponent
+    |-- index.ts
+    |-- ComponentName.test.ts
+    |-- styles.ts
+    |-- // Extra files for things like helpers or styles
+...
+```
+<br/>
+
+# Folders description
+
+### `./components`
+
+Components are presentational only elements, grouping UI items
+
+
+### `./pages`
+
+Pages are mapped in routes and have all the components needed to implement a functionality
+
+
+### `./utils/api`
+
+Services are responsible to handle the connection with all external elements, like APIs
+
+### `./utils/helpers`
+
+Directory to keep all `helpers` functions to share all over the project
+
+<br>
+
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
