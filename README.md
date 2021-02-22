@@ -57,4 +57,7 @@ Utilizado Vercel para deploy da aplicação
 
 ## Telas da Aplicação
 
+* Mobile
+
+
 
