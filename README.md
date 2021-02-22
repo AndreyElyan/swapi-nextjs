@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## URL da aplicação
 
 https://swapi-nextjs.vercel.app/films
+
+Criada aplicação para teste da empresa Ilegra, com a finalidade de ler os dados da api [https://swapi.dev/]
