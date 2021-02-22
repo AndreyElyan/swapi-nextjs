@@ -23,22 +23,19 @@ export const Header: React.FC<HeaderProps> = ({
 
   const [moviesTabActive, setMoviesTabActive] = useState(false);
   const [charactersTabActive, setCharactersTabActive] = useState(false);
-  const [spaceshipsTabActive, setSpaceshipsTabActive] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
     if (router.pathname === '/films') {
       setMoviesTabActive(true);
       setCharactersTabActive(false);
-      setSpaceshipsTabActive(false);
     } else if (router.pathname === '/characters') {
       setMoviesTabActive(false);
       setCharactersTabActive(true);
-      setSpaceshipsTabActive(false);
     } else if (router.pathname === '/spaceships') {
       setMoviesTabActive(false);
       setCharactersTabActive(false);
-      setSpaceshipsTabActive(true);
     }
   }, [router]);
 
