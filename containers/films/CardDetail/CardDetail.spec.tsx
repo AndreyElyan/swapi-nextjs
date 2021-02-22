@@ -20,6 +20,14 @@ describe('Render Films', () => {
     const title5 = await screen.findByText('Return of the Jedi');
     const title6 = await screen.findByText('Revenge of the Sith');
     const seeMore = await screen.findAllByText('See More');
+    const fieldName = await screen.findByPlaceholderText('Search a Movie');
+    const buttonSubmit = await screen.findByText('Search');
+
+    userEvent.type(fieldName, 'A New Hope');
+
+    await waitFor(() => expect(buttonSubmit).toBeEnabled());
+
+    userEvent.click(buttonSubmit);
 
     expect(title1).toBeVisible();
     expect(title2).toBeVisible();

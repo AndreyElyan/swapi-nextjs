@@ -59,7 +59,7 @@ const CardDetail: React.FC = () => {
         />
 
         <Button className="mt-4" onClick={searchMovie}>
-          Buscar
+          Search
         </Button>
       </div>
 

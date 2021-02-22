@@ -7,7 +7,7 @@ import Loader from 'components/Loader';
 import { useCallback } from 'react';
 import { charactersMachine } from 'utils/machines/characters';
 import { EVENTS, STATES } from 'utils/machines/characters/enums';
-import CardDetail from './CardDetail';
+import CardDetailCharacters from './CardDetailCharacters';
 
 export default function Characters() {
   const [state, dispatch] = useMachine(charactersMachine);
@@ -31,7 +31,7 @@ export default function Characters() {
             <Loader size="100px" />
           </div>
         ) : null}
-        {state.matches(STATES.ON_CHARACTERS) ? <CardDetail /> : null}
+        {state.matches(STATES.ON_CHARACTERS) ? <CardDetailCharacters /> : null}
       </div>
     </div>
   );

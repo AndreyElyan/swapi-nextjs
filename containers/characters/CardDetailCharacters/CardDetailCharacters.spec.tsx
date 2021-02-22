@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event';
 import { characters } from 'test/mocks/characters';
 
 import { axiosMock, render, screen, waitFor } from 'test/testUtils';
@@ -12,8 +13,18 @@ describe('Render Characters', () => {
   test('Check initials elements', async () => {
     render(<Characters />);
 
-    const title1 = await screen.findByText('Name:');
+    const btnPrevious = await screen.findByRole('button', {
+      name: /previous/i
+    });
 
-    expect(title1).toBeVisible();
+    const btnNext = await screen.findByRole('button', {
+      name: /next/i
+    });
+
+    await waitFor(() => expect(btnPrevious).toBeEnabled());
+    await waitFor(() => expect(btnNext).toBeEnabled());
+
+    userEvent.click(btnPrevious);
+    userEvent.click(btnNext);
   });
 });
