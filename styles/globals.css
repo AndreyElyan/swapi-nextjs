@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+  font-family: StarWars;
+  src: url(../public/fonts/Death_Star.otf);
+}
+
+.glow {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #EAB308, 0 0 40px #EAB308, 0 0 50px #EAB308, 0 0 60px #EAB308, 0 0 70px #EAB308, 0 0 80px #EAB308;
+  }
+}
