@@ -28,7 +28,8 @@ const CardDetail: React.FC = () => {
     [dispatch]
   );
 
-  const searchMovie = async () => {
+  const searchMovie = async event => {
+    event.preventDefault();
     try {
       if (searchValue) {
         const { data } = await searchFilm(searchValue);
@@ -51,17 +52,17 @@ const CardDetail: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col my-12">
+      <form className="flex flex-col my-12" onSubmit={searchMovie}>
         <Input
           label="Search a Movie"
           onChange={e => setSearchValue(e.target.value)}
           value={searchValue}
         />
 
-        <Button className="mt-4" onClick={searchMovie}>
+        <Button type="submit" className="mt-4">
           Search
         </Button>
-      </div>
+      </form>
 
       {!movies.length && <p>Nenhum resultado encontrado</p>}
 
