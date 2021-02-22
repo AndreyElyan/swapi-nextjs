@@ -63,7 +63,7 @@ const CardDetail: React.FC = () => {
         </Button>
       </div>
 
-      <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-8 w-full">
+      <div className="grid grid-flow-col grid-cols-2 grid-rows-3 my-8 gap-8 w-full">
         {!movies ? (
           <div className="flex justify-center items-center w-full h-full">
             <Loader size="100px" />
